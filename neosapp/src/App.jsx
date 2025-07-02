@@ -4,7 +4,7 @@ import './App.css';
 const App = () => {
   const [productos, setProductos] = useState([]);
   const [nombre, setNombre] = useState('');
-  const [precio, setPrecio] = useState(''); // ✅ agregar
+  const [precio, setPrecio] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [imagen, setImagen] = useState(null);
 
@@ -16,20 +16,29 @@ const App = () => {
     const nuevoProducto = {
       id: productos.length + 1,
       nombre,
-      precio, // ✅ incluirlo aquí
+      precio,
       descripcion,
       imagen: URL.createObjectURL(imagen),
     };
 
     setProductos([...productos, nuevoProducto]);
     setNombre('');
-    setPrecio(''); 
+    setPrecio('');
     setDescripcion('');
     setImagen(null);
   };
 
   return (
     <div className="app-container">
+      {/* Menú superior */}
+      <nav className="menu-superior">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Agregar Producto</a></li>
+          <li><a href="#">Ver Productos</a></li>
+        </ul>
+      </nav>
+
       <h2>Agregar Producto</h2>
       <form onSubmit={handleAgregarProducto} className="formulario">
         <input

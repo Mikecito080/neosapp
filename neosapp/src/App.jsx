@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import menu from './menu.jsx';
 
 const App = () => {
   const [productos, setProductos] = useState([]);
@@ -31,14 +32,8 @@ const App = () => {
   return (
     <div className="app-container">
       {/* Menú superior */}
-      <nav className="menu-superior">
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Agregar Producto</a></li>
-          <li><a href="#">Ver Productos</a></li>
-        </ul>
-      </nav>
 
+    <menu />
       <h2>Agregar Producto</h2>
       <form onSubmit={handleAgregarProducto} className="formulario">
         <input

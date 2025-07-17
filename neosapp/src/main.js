@@ -1,24 +1,32 @@
 import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
-
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
+document.querySelector('#header').innerHTML = `
+<header>
+  <div class="navbar">
+    <div class="logo">
+     <a><img src="" alt="NB"></a>
+      <span>Neos Belleza</span>
     </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
+
+    <div class="nav-links">
+        <a href="" class="sign-in">Ingresar</a>
+        <a href="" class="sign-up">Registrarse</a>
+    </div>
   </div>
+</header>
 `
 
-setupCounter(document.querySelector('#counter'))
+document.querySelector('#app').innerHTML = `
+
+
+
+`
+
+document.querySelector('#footer').innerHTML = `
+  <div class="redessociales">
+  <p>Neos Belleza</p>
+  <p>+ 57 311 3555709</p>
+  <p>neosbellezacomercializadora@gmail.com</p>
+  </div> 
+`

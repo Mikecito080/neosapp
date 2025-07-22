@@ -17,10 +17,13 @@ document.querySelector('#header').innerHTML = `
 </header>
 `
 
-document.querySelector('#app').innerHTML = `
-
-
-
+document.querySelector('#slogan').innerHTML = `
+    <div class="slogand">
+ <img src="" alt=" class="slogan-img">
+        <div class="slogan-text">
+          <h2>SLOGANNN</h2>
+          <p>SLOGANNN</p>
+  </div>
 `
 
 document.querySelector('#footer').innerHTML = `

@@ -4,9 +4,53 @@ const createHeader = () => {
   const header = document.createElement('header');
   const title = document.createElement('h1');
   title.textContent = 'NEOS BELLEZA';
+  const burgerMenu = createBurgerMenu(); // Se incluye dentro del header
   header.appendChild(title);
+  header.appendChild(burgerMenu);
   return header;
 };
+
+const createBurgerMenu = () => {
+  const burgerMenu = document.createElement('nav');
+  burgerMenu.className = 'burger-menu';
+
+  const menuToggleBtn = document.createElement('button');
+  menuToggleBtn.className = 'menu-toggle-btn';
+  menuToggleBtn.innerHTML = '&#9776;'; // Ícono
+
+  const menuList = document.createElement('ul');
+  menuList.className = 'menu-list';
+
+  const menuItems = ['Inicio', 'Acerca de', 'Pedidos', 'Ubicación', 'Contacto'];
+  menuItems.forEach(text => {
+    const listItem = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = '#';
+    link.textContent = text;
+    listItem.appendChild(link);
+    menuList.appendChild(listItem);
+  });
+
+  // Mostrar u ocultar el menú
+  menuToggleBtn.addEventListener('click', (event) => {
+    event.stopPropagation(); // Evita cierre inmediato
+    menuList.classList.toggle('menu-visible');
+  });
+
+  // Cierre al hacer clic fuera
+  document.addEventListener('click', (event) => {
+    const isClickInsideMenu = burgerMenu.contains(event.target);
+    if (!isClickInsideMenu) {
+      menuList.classList.remove('menu-visible');
+    }
+  });
+
+  burgerMenu.appendChild(menuToggleBtn);
+  burgerMenu.appendChild(menuList);
+  return burgerMenu;
+};
+
+
 
 const createMain = () => {
   const main = document.createElement('main');

@@ -1,5 +1,5 @@
 :root {
-  --color-background: #000000;
+  --color-background: #424242;
   --color-text: #f8f4e3;
   --color-gold: #d4af37;
   --color-header-footer: #111111;
@@ -69,6 +69,10 @@ header, footer {
   font-weight: bold;
 }
 
+main.shifted {
+  margin-left: 100px;
+  transition: margin-left 0.3s ease;
+}
 
 main {
   flex: 1; /* Ocupará todo el espacio disponible */
